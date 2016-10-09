@@ -5,9 +5,201 @@
     tools:context="layout.seguntoEstagio">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:text="Calcular diâmetro necessário"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonDiametro"
+            android:onClick="getAnswerDiametro"
+            android:layout_below="@+id/densidade1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp" />
+
+        <Button
+            android:text="Calcular resistência equivalente "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11dp"
+            android:id="@+id/buttonResistencia"
+            android:onClick="getAnswerResistencia"
+            android:layout_below="@+id/resistencia2"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/unidade4"
+            android:textSize="14sp"
+            android:layout_marginRight="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_alignBaseline="@+id/corrente1"
+            android:layout_alignBottom="@+id/corrente1"
+            android:layout_alignRight="@+id/buttonDiametro"
+            android:layout_alignEnd="@+id/buttonDiametro" />
+
+        <EditText
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:layout_marginTop="38dp"
+            android:id="@+id/corrente1"
+            android:textSize="14sp"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/unidade4"
+            android:layout_toStartOf="@+id/unidade4" />
+
+        <TextView
+            android:text="Corrente (A):"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textCorrente1"
+            android:layout_alignBaseline="@+id/corrente1"
+            android:layout_alignBottom="@+id/corrente1"
+            android:layout_toLeftOf="@+id/corrente1"
+            android:layout_toStartOf="@+id/corrente1" />
+
+        <TextView
+            android:text="  "
+            android:id="@+id/answerDiametro"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:layout_height="50dp"
+            android:layout_below="@+id/buttonDiametro"
+            android:layout_marginTop="10dp"
+            android:layout_alignRight="@+id/buttonDiametro"
+            android:layout_alignEnd="@+id/buttonDiametro"
+            android:layout_alignLeft="@+id/buttonDiametro"
+            android:layout_alignStart="@+id/buttonDiametro"
+            android:layout_width="400dp" />
+
+        <TextView
+            android:layout_width="400dp"
+            android:id="@+id/answerResistencia"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:layout_height="50dp"
+            android:layout_below="@+id/buttonResistencia"
+            android:layout_marginTop="13dp"
+            android:layout_alignRight="@+id/answerDiametro"
+            android:layout_alignEnd="@+id/answerDiametro"
+            android:layout_alignLeft="@+id/answerDiametro"
+            android:layout_alignStart="@+id/answerDiametro" />
+
+        <EditText
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/resistencia2"
+            android:textSize="14sp"
+            android:layout_alignBaseline="@+id/textResistencia2"
+            android:layout_alignBottom="@+id/textResistencia2"
+            android:layout_alignLeft="@+id/resistencia1"
+            android:layout_alignStart="@+id/resistencia1" />
+
+        <TextView
+            android:text="Resistência 2(ohm):"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:id="@+id/textResistencia2"
+            android:layout_below="@+id/resistencia1"
+            android:layout_toLeftOf="@+id/resistencia2"
+            android:layout_toStartOf="@+id/resistencia2" />
+
+        <TextView
+            android:text="Resistência 1(ohm):"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textResistencia1"
+            android:layout_alignBaseline="@+id/resistencia1"
+            android:layout_alignBottom="@+id/resistencia1"
+            android:layout_alignLeft="@+id/textCorrente1"
+            android:layout_alignStart="@+id/textCorrente1" />
+
+        <EditText
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/resistencia1"
+            android:textSize="14sp"
+            android:layout_below="@+id/answerDiametro"
+            android:layout_toRightOf="@+id/textResistencia1"
+            android:layout_toEndOf="@+id/textResistencia1" />
+
+        <EditText
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/densidade1"
+            android:textSize="14sp"
+            android:layout_alignBaseline="@+id/textDensidade1"
+            android:layout_alignBottom="@+id/textDensidade1"
+            android:layout_toRightOf="@+id/textDensidade1"
+            android:layout_toEndOf="@+id/textDensidade1" />
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/unidade5"
+            android:textSize="14sp"
+            android:layout_alignBaseline="@+id/densidade1"
+            android:layout_alignBottom="@+id/densidade1"
+            android:layout_toRightOf="@+id/densidade1"
+            android:layout_toEndOf="@+id/densidade1"
+            android:layout_width="50dp" />
+
+        <TextView
+            android:text="(A/"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textUnidade"
+            android:layout_alignBaseline="@+id/unidade5"
+            android:layout_alignBottom="@+id/unidade5"
+            android:layout_toRightOf="@+id/unidade5"
+            android:layout_toEndOf="@+id/unidade5" />
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/unidade6"
+            android:textSize="14sp"
+            android:layout_alignBaseline="@+id/textUnidade"
+            android:layout_alignBottom="@+id/textUnidade"
+            android:layout_toRightOf="@+id/textUnidade"
+            android:layout_toEndOf="@+id/textUnidade"
+            android:layout_width="50dp" />
+
+        <TextView
+            android:text="²)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4"
+            android:layout_alignBaseline="@+id/unidade6"
+            android:layout_alignBottom="@+id/unidade6"
+            android:layout_toRightOf="@+id/unidade6"
+            android:layout_toEndOf="@+id/unidade6" />
+
+        <TextView
+            android:text="Densidade:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:id="@+id/textDensidade1"
+            android:layout_below="@+id/corrente1"
+            android:layout_alignLeft="@+id/buttonResistencia"
+            android:layout_alignStart="@+id/buttonResistencia" />
+    </RelativeLayout>
 </FrameLayout>

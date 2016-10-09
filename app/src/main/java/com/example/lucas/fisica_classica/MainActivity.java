@@ -1,9 +1,6 @@
 package com.example.lucas.fisica_classica;
 
-import android.icu.text.DecimalFormat;
 import android.support.design.widget.TabLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -12,21 +9,15 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
-import android.text.style.TtsSpan;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -174,9 +165,9 @@ public class MainActivity extends AppCompatActivity {
                 case 0:
                     return "Coulomb";
                 case 1:
-                    return "Resistor";
+                    return "Corrente";
                 case 2:
-                    return "Campo";
+                    return "Magnético";
             }
             return null;
         }
@@ -184,7 +175,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void getAnswerForca(View v){
         //CHECAR PRA OBRIGAR A INSERIR
-        //add código
         EditText testando1 = (EditText) findViewById(R.id.carga1);
         if(testando1.getText().toString().toLowerCase().trim().equals("")){
             Toast.makeText(this,"Insira o valor da carga 1", Toast.LENGTH_SHORT).show();
@@ -337,7 +327,280 @@ public class MainActivity extends AppCompatActivity {
 
         double valorTotal = ((carga1*carga2)/(distancia*distancia))*knumero;
 
-        String teste = ""+String.format("%.2f",valorTotal)+"x10^("+potenciaTotal+")  N";
+        String teste = "F = "+String.format("%.3f",valorTotal)+"x10^("+potenciaTotal+")  N";
         myanswer.setText(teste);
+    }
+
+    public void getAnswerDiametro(View v){
+
+        TextView answer = (TextView) findViewById(R.id.answerDiametro);
+
+        EditText testando1 = (EditText) findViewById(R.id.corrente1);
+        if(testando1.getText().toString().toLowerCase().trim().equals("")){
+            answer.setText("");
+            Toast.makeText(this,"Insira o valor da corrente", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        EditText testando2 = (EditText) findViewById(R.id.densidade1);
+        if(testando2.getText().toString().toLowerCase().trim().equals("")){
+            answer.setText("");
+            Toast.makeText(this,"Insira o valor da densidade", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        //unidades valores
+        int corrente1potencia;
+        EditText corrente1unidadeText = (EditText) findViewById(R.id.unidade4);
+        String corrente1unidade = corrente1unidadeText.getText().toString().toLowerCase().trim();
+        if (corrente1unidade.equals("")){
+            corrente1potencia = 0;
+        }else if(corrente1unidade.equals("femto")){
+            corrente1potencia = -15;
+        }else if(corrente1unidade.equals("pico")){
+            corrente1potencia = -12;
+        }else if(corrente1unidade.equals("nano")){
+            corrente1potencia = -9;
+        }else if(corrente1unidade.equals("micro")){
+            corrente1potencia = -6;
+        }else if(corrente1unidade.equals("mili")){
+            corrente1potencia = -3;
+        }else if(corrente1unidade.equals("centi")){
+            corrente1potencia = -2;
+        }else if(corrente1unidade.equals("deci")){
+            corrente1potencia = -1;
+        }else if(corrente1unidade.equals("deca")){
+            corrente1potencia = 1;
+        }else if(corrente1unidade.equals("hecto")){
+            corrente1potencia = 2;
+        }else if(corrente1unidade.equals("quilo")){
+            corrente1potencia = 3;
+        }else if(corrente1unidade.equals("mega")){
+            corrente1potencia = 6;
+        }else if(corrente1unidade.equals("giga")){
+            corrente1potencia = 9;
+        }else if(corrente1unidade.equals("tera")){
+            corrente1potencia = 12;
+        }else if(corrente1unidade.equals("peta")){
+            corrente1potencia = 15;
+        }else{
+            answer.setText("");
+            Toast.makeText(this,"Unidade(s) inválida(s)", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        int densidade1potencia1;
+        EditText densidade1unidade1Text = (EditText) findViewById(R.id.unidade5);
+        String densidade1unidade1 = densidade1unidade1Text.getText().toString().toLowerCase().trim();
+        if (densidade1unidade1.equals("")){
+            densidade1potencia1 = 0;
+        }else if(densidade1unidade1.equals("femto")){
+            densidade1potencia1 = -15;
+        }else if(densidade1unidade1.equals("pico")){
+            densidade1potencia1 = -12;
+        }else if(densidade1unidade1.equals("nano")){
+            densidade1potencia1 = -9;
+        }else if(densidade1unidade1.equals("micro")){
+            densidade1potencia1 = -6;
+        }else if(densidade1unidade1.equals("mili")){
+            densidade1potencia1 = -3;
+        }else if(densidade1unidade1.equals("centi")){
+            densidade1potencia1 = -2;
+        }else if(densidade1unidade1.equals("deci")){
+            densidade1potencia1 = -1;
+        }else if(densidade1unidade1.equals("deca")){
+            densidade1potencia1 = 1;
+        }else if(densidade1unidade1.equals("hecto")){
+            densidade1potencia1 = 2;
+        }else if(densidade1unidade1.equals("quilo")){
+            densidade1potencia1 = 3;
+        }else if(densidade1unidade1.equals("mega")){
+            densidade1potencia1 = 6;
+        }else if(densidade1unidade1.equals("giga")){
+            densidade1potencia1 = 9;
+        }else if(densidade1unidade1.equals("tera")){
+            densidade1potencia1 = 12;
+        }else if(densidade1unidade1.equals("peta")){
+            densidade1potencia1 = 15;
+        }else{
+            answer.setText("");
+            Toast.makeText(this,"Unidade(s) inválida(s)", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        int densidade1potencia2;
+        EditText densidade1unidade2Text = (EditText) findViewById(R.id.unidade6);
+        String densidade1unidade2 = densidade1unidade2Text.getText().toString().toLowerCase().trim();
+        if (densidade1unidade2.equals("")){
+            densidade1potencia2 = 0;
+        }else if(densidade1unidade2.equals("femto")){
+            densidade1potencia2 = -15;
+        }else if(densidade1unidade2.equals("pico")){
+            densidade1potencia2 = -12;
+        }else if(densidade1unidade2.equals("nano")){
+            densidade1potencia2 = -9;
+        }else if(densidade1unidade2.equals("micro")){
+            densidade1potencia2 = -6;
+        }else if(densidade1unidade2.equals("mili")){
+            densidade1potencia2 = -3;
+        }else if(densidade1unidade2.equals("centi")){
+            densidade1potencia2 = -2;
+        }else if(densidade1unidade2.equals("deci")){
+            densidade1potencia2 = -1;
+        }else if(densidade1unidade2.equals("deca")){
+            densidade1potencia2 = 1;
+        }else if(densidade1unidade2.equals("hecto")){
+            densidade1potencia2 = 2;
+        }else if(densidade1unidade2.equals("quilo")){
+            densidade1potencia2 = 3;
+        }else if(densidade1unidade2.equals("mega")){
+            densidade1potencia2 = 6;
+        }else if(densidade1unidade2.equals("giga")){
+            densidade1potencia2 = 9;
+        }else if(densidade1unidade2.equals("tera")){
+            densidade1potencia2 = 12;
+        }else if(densidade1unidade2.equals("peta")){
+            densidade1potencia2 = 15;
+        }else{
+            answer.setText("");
+            Toast.makeText(this,"Unidade(s) inválida(s)", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        int potenciaIntermediaria = corrente1potencia+((-1)*(densidade1potencia1+((-1)*(densidade1potencia2+densidade1potencia2))));
+
+        EditText corrente1Text = (EditText) findViewById(R.id.corrente1);
+        double corrente1 = Double.parseDouble(corrente1Text.getText().toString());
+        EditText densidade1Text = (EditText) findViewById(R.id.densidade1);
+        double densidade1 = Double.parseDouble(densidade1Text.getText().toString());
+
+        double valorTotal = 2*(Math.sqrt(corrente1/(densidade1*Math.PI)));
+
+        int potenciaTotal;
+        if(potenciaIntermediaria%2!=0){
+            potenciaIntermediaria = potenciaIntermediaria-1;
+            valorTotal = valorTotal*10;
+            potenciaTotal = potenciaIntermediaria/2;
+        }else{
+            potenciaTotal = potenciaIntermediaria/2;
+        }
+
+        String resposta = "D = "+String.format("%.3f",valorTotal)+"x10^("+potenciaTotal+")  m";
+
+        answer.setText(resposta);
+    }
+
+    public void getAnswerResistencia(View v){
+
+        TextView myAnswer = (TextView) findViewById(R.id.answerResistencia);
+
+        EditText testando1 = (EditText) findViewById(R.id.resistencia1);
+        if(testando1.getText().toString().toLowerCase().trim().equals("")){
+            myAnswer.setText("");
+            Toast.makeText(this,"Insira o valor da resistência 1", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        EditText testando2 = (EditText) findViewById(R.id.resistencia2);
+        myAnswer.setText("");
+        if(testando2.getText().toString().toLowerCase().trim().equals("")){
+            Toast.makeText(this,"Insira o valor da resistência 2", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        //unidades valores
+        /*
+        int resistencia1potencia;
+        EditText resistencia1unidadeText = (EditText) findViewById(R.id.unidade5);
+        String resistencia1unidade = resistencia1unidadeText.getText().toString().toLowerCase().trim();
+        if (resistencia1unidade.equals("")){
+            resistencia1potencia = 0;
+        }else if(resistencia1unidade.equals("femto")){
+            resistencia1potencia = -15;
+        }else if(resistencia1unidade.equals("pico")){
+            resistencia1potencia = -12;
+        }else if(resistencia1unidade.equals("nano")){
+            resistencia1potencia = -9;
+        }else if(resistencia1unidade.equals("micro")){
+            resistencia1potencia = -6;
+        }else if(resistencia1unidade.equals("mili")){
+            resistencia1potencia = -3;
+        }else if(resistencia1unidade.equals("centi")){
+            resistencia1potencia = -2;
+        }else if(resistencia1unidade.equals("deci")){
+            resistencia1potencia = -1;
+        }else if(resistencia1unidade.equals("deca")){
+            resistencia1potencia = 1;
+        }else if(resistencia1unidade.equals("hecto")){
+            resistencia1potencia = 2;
+        }else if(resistencia1unidade.equals("quilo")){
+            resistencia1potencia = 3;
+        }else if(resistencia1unidade.equals("mega")){
+            resistencia1potencia = 6;
+        }else if(resistencia1unidade.equals("giga")){
+            resistencia1potencia = 9;
+        }else if(resistencia1unidade.equals("tera")){
+            resistencia1potencia = 12;
+        }else if(resistencia1unidade.equals("peta")){
+            resistencia1potencia = 15;
+        }else{
+            myAnswer.setText("");
+            Toast.makeText(this,"Unidade(s) inválida(s)", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        int resistencia2potencia;
+        EditText resistencia2unidadeText = (EditText) findViewById(R.id.unidade6);
+        String resistencia2unidade = resistencia2unidadeText.getText().toString().toLowerCase().trim();
+        if (resistencia2unidade.equals("")){
+            resistencia2potencia = 0;
+        }else if(resistencia2unidade.equals("femto")){
+            resistencia2potencia = -15;
+        }else if(resistencia2unidade.equals("pico")){
+            resistencia2potencia = -12;
+        }else if(resistencia2unidade.equals("nano")){
+            resistencia2potencia = -9;
+        }else if(resistencia2unidade.equals("micro")){
+            resistencia2potencia = -6;
+        }else if(resistencia2unidade.equals("mili")){
+            resistencia2potencia = -3;
+        }else if(resistencia2unidade.equals("centi")){
+            resistencia2potencia = -2;
+        }else if(resistencia2unidade.equals("deci")){
+            resistencia2potencia = -1;
+        }else if(resistencia2unidade.equals("deca")){
+            resistencia2potencia = 1;
+        }else if(resistencia2unidade.equals("hecto")){
+            resistencia2potencia = 2;
+        }else if(resistencia2unidade.equals("quilo")){
+            resistencia2potencia = 3;
+        }else if(resistencia2unidade.equals("mega")){
+            resistencia2potencia = 6;
+        }else if(resistencia2unidade.equals("giga")){
+            resistencia2potencia = 9;
+        }else if(resistencia2unidade.equals("tera")){
+            resistencia2potencia = 12;
+        }else if(resistencia2unidade.equals("peta")){
+            resistencia2potencia = 15;
+        }else{
+            myAnswer.setText("");
+            Toast.makeText(this,"Unidade(s) inválida(s)", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        int potenciaTotal = (resistencia1potencia + resistencia2potencia)+(-1)*(resistencia1potencia);
+         */
+
+        EditText resistencia1text = (EditText) findViewById(R.id.resistencia1);
+        double resistencia1 = Double.parseDouble(resistencia1text.getText().toString());
+        EditText resistencia2text = (EditText) findViewById(R.id.resistencia2);
+        double resistencia2 = Double.parseDouble(resistencia2text.getText().toString());
+
+        double valorTotal = (resistencia1*resistencia2)/(resistencia1+resistencia2);
+
+
+        String resposta = "R = "+String.format("%.3f",valorTotal)+" Ω";
+
+        TextView answer = (TextView) findViewById(R.id.answerResistencia);
+        answer.setText(resposta);
     }
 }
