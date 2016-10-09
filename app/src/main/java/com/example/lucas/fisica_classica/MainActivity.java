@@ -598,7 +598,7 @@ public class MainActivity extends AppCompatActivity {
         double valorTotal = (resistencia1*resistencia2)/(resistencia1+resistencia2);
 
 
-        String resposta = "R = "+String.format("%.3f",valorTotal)+" Ω";
+        String resposta = "R = "+String.format("%.2f",valorTotal)+" Ω";
 
         TextView answer = (TextView) findViewById(R.id.answerResistencia);
         answer.setText(resposta);
