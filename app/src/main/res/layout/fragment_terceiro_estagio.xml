@@ -144,29 +144,65 @@
             android:layout_centerHorizontal="true"
             android:onClick="getAnswerEnergiaCinetica" />
 
+        <EditText
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberSigned"
+            android:ems="10"
+            android:id="@+id/unidade7um"
+            android:textSize="14sp"
+            android:layout_alignBaseline="@+id/unidade7"
+            android:layout_alignBottom="@+id/unidade7"
+            android:layout_toRightOf="@+id/unidade7"
+            android:layout_toEndOf="@+id/unidade7" />
+
+        <EditText
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberSigned"
+            android:ems="10"
+            android:id="@+id/unidade8um"
+            android:textSize="14sp"
+            android:layout_alignBaseline="@+id/unidade8"
+            android:layout_alignBottom="@+id/unidade8"
+            android:layout_toRightOf="@+id/unidade8"
+            android:layout_toEndOf="@+id/unidade8" />
+
         <TextView
             android:layout_width="400dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginTop="29dp"
             android:id="@+id/answerEnergicaCinetica"
-            android:layout_below="@+id/buttonEnergiaCinetica"
-            android:layout_alignLeft="@+id/textView3"
-            android:layout_alignStart="@+id/textView3"
-            android:layout_alignRight="@+id/textView3"
-            android:layout_alignEnd="@+id/textView3"
             android:textAlignment="center"
             android:layout_height="50dp"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:layout_below="@+id/buttonEnergiaCinetica"
+            android:layout_alignLeft="@+id/textForcaMagnetica1"
+            android:layout_alignStart="@+id/textForcaMagnetica1"
+            android:layout_alignRight="@+id/unidade8um"
+            android:layout_alignEnd="@+id/unidade8um" />
+
+        <TextView
+            android:layout_width="400dp"
+            android:layout_height="50dp"
+            android:id="@+id/answerVelocidade"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:layout_below="@+id/answerEnergiaCineticaEV"
+            android:layout_alignLeft="@+id/answerEnergiaCineticaEV"
+            android:layout_alignStart="@+id/answerEnergiaCineticaEV"
+            android:layout_alignRight="@+id/answerEnergiaCineticaEV"
+            android:layout_alignEnd="@+id/answerEnergiaCineticaEV" />
 
         <TextView
             android:layout_height="50dp"
-            android:id="@+id/answerVelocidadeEnergia"
+            android:id="@+id/answerEnergiaCineticaEV"
             android:layout_width="400dp"
             android:textAlignment="center"
+            android:textSize="24sp"
             android:layout_below="@+id/answerEnergicaCinetica"
-            android:layout_alignRight="@+id/answerEnergicaCinetica"
-            android:layout_alignEnd="@+id/answerEnergicaCinetica"
             android:layout_alignLeft="@+id/answerEnergicaCinetica"
             android:layout_alignStart="@+id/answerEnergicaCinetica"
-            android:textSize="24sp" />
+            android:layout_alignRight="@+id/answerEnergicaCinetica"
+            android:layout_alignEnd="@+id/answerEnergicaCinetica" />
     </RelativeLayout>
 </FrameLayout>

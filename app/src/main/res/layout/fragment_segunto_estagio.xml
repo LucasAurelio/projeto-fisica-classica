@@ -8,7 +8,10 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <Button
             android:text="Calcular diâmetro necessário"
@@ -29,20 +32,6 @@
             android:onClick="getAnswerResistencia"
             android:layout_below="@+id/resistencia2"
             android:layout_centerHorizontal="true" />
-
-        <EditText
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/unidade4"
-            android:textSize="14sp"
-            android:layout_marginRight="24dp"
-            android:layout_marginEnd="24dp"
-            android:layout_alignBaseline="@+id/corrente1"
-            android:layout_alignBottom="@+id/corrente1"
-            android:layout_alignRight="@+id/buttonDiametro"
-            android:layout_alignEnd="@+id/buttonDiametro" />
 
         <TextView
             android:text="  "
@@ -114,8 +103,17 @@
             android:layout_toRightOf="@+id/textResistencia1"
             android:layout_toEndOf="@+id/textResistencia1" />
 
+        <TextView
+            android:text="Corrente e Resistência"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:textSize="30sp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp" />
+
         <EditText
-            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
             android:ems="10"
@@ -124,7 +122,8 @@
             android:layout_alignBaseline="@+id/textDensidade1"
             android:layout_alignBottom="@+id/textDensidade1"
             android:layout_toRightOf="@+id/textDensidade1"
-            android:layout_toEndOf="@+id/textDensidade1" />
+            android:layout_toEndOf="@+id/textDensidade1"
+            android:layout_width="70dp" />
 
         <EditText
             android:layout_height="wrap_content"
@@ -132,21 +131,33 @@
             android:ems="10"
             android:id="@+id/unidade5"
             android:textSize="14sp"
+            android:layout_width="50dp"
             android:layout_alignBaseline="@+id/densidade1"
             android:layout_alignBottom="@+id/densidade1"
             android:layout_toRightOf="@+id/densidade1"
-            android:layout_toEndOf="@+id/densidade1"
-            android:layout_width="50dp" />
+            android:layout_toEndOf="@+id/densidade1" />
 
-        <TextView
-            android:text="(A/"
-            android:layout_width="wrap_content"
+        <EditText
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:id="@+id/textUnidade"
+            android:inputType="numberSigned"
+            android:ems="10"
+            android:id="@+id/unidade5um"
+            android:textSize="14sp"
             android:layout_alignBaseline="@+id/unidade5"
             android:layout_alignBottom="@+id/unidade5"
             android:layout_toRightOf="@+id/unidade5"
             android:layout_toEndOf="@+id/unidade5" />
+
+        <TextView
+            android:text="A/"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textUnidade"
+            android:layout_alignBaseline="@+id/unidade5um"
+            android:layout_alignBottom="@+id/unidade5um"
+            android:layout_toRightOf="@+id/unidade5um"
+            android:layout_toEndOf="@+id/unidade5um" />
 
         <EditText
             android:layout_height="wrap_content"
@@ -154,14 +165,14 @@
             android:ems="10"
             android:id="@+id/unidade6"
             android:textSize="14sp"
+            android:layout_width="50dp"
             android:layout_alignBaseline="@+id/textUnidade"
             android:layout_alignBottom="@+id/textUnidade"
             android:layout_toRightOf="@+id/textUnidade"
-            android:layout_toEndOf="@+id/textUnidade"
-            android:layout_width="50dp" />
+            android:layout_toEndOf="@+id/textUnidade" />
 
         <TextView
-            android:text="²)"
+            android:text="²"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView4"
@@ -174,21 +185,13 @@
             android:text="Densidade:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="23dp"
+            android:layout_marginTop="21dp"
             android:id="@+id/textDensidade1"
+            android:layout_marginLeft="27dp"
+            android:layout_marginStart="27dp"
             android:layout_below="@+id/corrente1"
-            android:layout_alignLeft="@+id/buttonResistencia"
-            android:layout_alignStart="@+id/buttonResistencia" />
-
-        <TextView
-            android:text="Corrente e Resistência"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView2"
-            android:textSize="30sp"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="13dp" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
         <EditText
             android:layout_width="80dp"
@@ -197,20 +200,45 @@
             android:ems="10"
             android:id="@+id/corrente1"
             android:textSize="14sp"
-            android:layout_marginTop="11dp"
+            android:layout_marginTop="12dp"
             android:layout_below="@+id/textView2"
-            android:layout_toLeftOf="@+id/unidade4"
-            android:layout_toStartOf="@+id/unidade4" />
+            android:layout_toRightOf="@+id/textCorrente1"
+            android:layout_toEndOf="@+id/textCorrente1" />
+
+        <EditText
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/unidade4"
+            android:textSize="14sp"
+            android:layout_alignBaseline="@+id/corrente1"
+            android:layout_alignBottom="@+id/corrente1"
+            android:layout_toRightOf="@+id/corrente1"
+            android:layout_toEndOf="@+id/corrente1" />
 
         <TextView
             android:text="Corrente (A):"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textCorrente1"
+            android:textSize="14sp"
             android:layout_alignBaseline="@+id/corrente1"
             android:layout_alignBottom="@+id/corrente1"
-            android:layout_toLeftOf="@+id/corrente1"
-            android:layout_toStartOf="@+id/corrente1"
-            android:textSize="14sp" />
+            android:layout_alignLeft="@+id/buttonDiametro"
+            android:layout_alignStart="@+id/buttonDiametro" />
+
+        <EditText
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberSigned"
+            android:ems="10"
+            android:id="@+id/unidade4um"
+            android:textSize="14sp"
+            android:layout_alignBaseline="@+id/unidade4"
+            android:layout_alignBottom="@+id/unidade4"
+            android:layout_toRightOf="@+id/unidade4"
+            android:layout_toEndOf="@+id/unidade4" />
+
     </RelativeLayout>
 </FrameLayout>

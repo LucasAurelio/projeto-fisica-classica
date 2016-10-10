@@ -13,44 +13,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <EditText
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:id="@+id/carga2"
-        android:textSize="14sp"
-        android:layout_alignBaseline="@+id/textCarga2"
-        android:layout_alignBottom="@+id/textCarga2"
-        android:layout_alignRight="@+id/carga1"
-        android:layout_alignEnd="@+id/carga1" />
-
-    <EditText
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/unidade2"
-        android:textSize="14sp"
-        android:layout_alignBaseline="@+id/carga2"
-        android:layout_alignBottom="@+id/carga2"
-        android:layout_alignRight="@+id/buttonForca"
-        android:layout_alignEnd="@+id/buttonForca"
-        android:layout_marginRight="20dp"
-        android:layout_marginEnd="20dp" />
-
-    <EditText
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/unidade1"
-        android:textSize="14sp"
-        android:layout_alignBaseline="@+id/carga1"
-        android:layout_alignBottom="@+id/carga1"
-        android:layout_alignLeft="@+id/unidade2"
-        android:layout_alignStart="@+id/unidade2" />
-
     <Button
         android:text="Calcular Força Eletrostática"
         android:layout_width="wrap_content"
@@ -74,38 +36,6 @@
         android:layout_height="85dp" />
 
     <EditText
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:ems="10"
-        android:layout_marginTop="26dp"
-        android:id="@+id/carga1"
-        android:textSize="14sp"
-        android:layout_below="@+id/section_label"
-        android:layout_toLeftOf="@+id/unidade1"
-        android:layout_toStartOf="@+id/unidade1" />
-
-    <TextView
-        android:text="Carga 1 (C):"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textCarga1"
-        android:layout_alignBaseline="@+id/carga1"
-        android:layout_alignBottom="@+id/carga1"
-        android:layout_toLeftOf="@+id/carga1"
-        android:layout_toStartOf="@+id/carga1" />
-
-    <TextView
-        android:text="Carga 2 (C):"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:id="@+id/textCarga2"
-        android:layout_below="@+id/carga1"
-        android:layout_toLeftOf="@+id/carga2"
-        android:layout_toStartOf="@+id/carga2" />
-
-    <EditText
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:ems="10"
@@ -116,16 +46,6 @@
         android:layout_alignBottom="@+id/textDistancia"
         android:layout_toLeftOf="@+id/unidade3"
         android:layout_toStartOf="@+id/unidade3" />
-
-    <TextView
-        android:text="Distância (m):"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textDistancia"
-        android:layout_marginTop="39dp"
-        android:layout_below="@+id/carga2"
-        android:layout_toLeftOf="@+id/distancia1"
-        android:layout_toStartOf="@+id/distancia1" />
 
     <EditText
         android:layout_width="50dp"
@@ -147,5 +67,117 @@
         android:textSize="30sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned"
+        android:ems="10"
+        android:id="@+id/unidade1um"
+        android:textSize="14sp"
+        android:layout_alignBaseline="@+id/unidade1"
+        android:layout_alignBottom="@+id/unidade1"
+        android:layout_toRightOf="@+id/unidade1"
+        android:layout_toEndOf="@+id/unidade1" />
+
+    <EditText
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned"
+        android:ems="10"
+        android:id="@+id/unidade3um"
+        android:textSize="14sp"
+        android:layout_alignBaseline="@+id/unidade3"
+        android:layout_alignBottom="@+id/unidade3"
+        android:layout_toRightOf="@+id/unidade3"
+        android:layout_toEndOf="@+id/unidade3" />
+
+    <TextView
+        android:text="Carga 1 (C):"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textCarga1"
+        android:layout_alignBaseline="@+id/carga1"
+        android:layout_alignBottom="@+id/carga1"
+        android:layout_alignLeft="@+id/textCarga2"
+        android:layout_alignStart="@+id/textCarga2" />
+
+    <TextView
+        android:text="Distância (m):"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textDistancia"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/carga2"
+        android:layout_alignLeft="@+id/buttonForca"
+        android:layout_alignStart="@+id/buttonForca" />
+
+    <TextView
+        android:text="Carga 2 (C):"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:id="@+id/textCarga2"
+        android:layout_below="@+id/carga1"
+        android:layout_alignRight="@+id/textDistancia"
+        android:layout_alignEnd="@+id/textDistancia" />
+
+    <EditText
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/carga1"
+        android:textSize="14sp"
+        android:layout_below="@+id/textView"
+        android:layout_toRightOf="@+id/textCarga1"
+        android:layout_toEndOf="@+id/textCarga1" />
+
+    <EditText
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/unidade1"
+        android:textSize="14sp"
+        android:layout_above="@+id/textCarga2"
+        android:layout_toRightOf="@+id/carga1"
+        android:layout_toEndOf="@+id/carga1" />
+
+    <EditText
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:id="@+id/carga2"
+        android:textSize="14sp"
+        android:layout_alignBaseline="@+id/textCarga2"
+        android:layout_alignBottom="@+id/textCarga2"
+        android:layout_toRightOf="@+id/textCarga2"
+        android:layout_toEndOf="@+id/textCarga2" />
+
+    <EditText
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/unidade2"
+        android:textSize="14sp"
+        android:layout_alignBaseline="@+id/carga2"
+        android:layout_alignBottom="@+id/carga2"
+        android:layout_toRightOf="@+id/carga2"
+        android:layout_toEndOf="@+id/carga2" />
+
+    <EditText
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:inputType="numberSigned"
+        android:ems="10"
+        android:id="@+id/unidade2um"
+        android:textSize="14sp"
+        android:layout_alignBaseline="@+id/unidade2"
+        android:layout_alignBottom="@+id/unidade2"
+        android:layout_toRightOf="@+id/unidade1"
+        android:layout_toEndOf="@+id/unidade1" />
 
 </RelativeLayout>
