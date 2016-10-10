@@ -174,24 +174,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void getAnswerForca(View v){
-        //CHECAR PRA OBRIGAR A INSERIR
+
+        TextView myanswer = (TextView) findViewById(R.id.answerForca);
+
         EditText testando1 = (EditText) findViewById(R.id.carga1);
         if(testando1.getText().toString().toLowerCase().trim().equals("")){
+            myanswer.setText("");
             Toast.makeText(this,"Insira o valor da carga 1", Toast.LENGTH_SHORT).show();
             return;
         }
         EditText testando2 = (EditText) findViewById(R.id.carga2);
         if(testando2.getText().toString().toLowerCase().trim().equals("")){
+            myanswer.setText("");
             Toast.makeText(this,"Insira o valor da carga 2", Toast.LENGTH_SHORT).show();
             return;
         }
         EditText testando3 = (EditText) findViewById(R.id.distancia1);
         if(testando3.getText().toString().toLowerCase().trim().equals("")){
+            myanswer.setText("");
             Toast.makeText(this,"Insira o valor da distância entre as cargas", Toast.LENGTH_SHORT).show();
             return;
         }
-
-        TextView myanswer = (TextView) findViewById(R.id.answerForca);
 
         //constante K
         double knumero = 8.99;
@@ -501,8 +504,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         EditText testando2 = (EditText) findViewById(R.id.resistencia2);
-        myAnswer.setText("");
         if(testando2.getText().toString().toLowerCase().trim().equals("")){
+            myAnswer.setText("");
             Toast.makeText(this,"Insira o valor da resistência 2", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -605,7 +608,159 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void getAnswerEnergiaCinetica(View v){
-        //testing
-        Toast.makeText(this,"Correct!", Toast.LENGTH_SHORT).show();
+        TextView myAnswer = (TextView) findViewById(R.id.answerEnergicaCinetica);
+        TextView myAnswer2 = (TextView) findViewById(R.id.answerVelocidadeEnergia);
+
+        EditText testando1 = (EditText) findViewById(R.id.forcaMagnetica1);
+        if(testando1.getText().toString().toLowerCase().trim().equals("")){
+            myAnswer.setText("");
+            myAnswer2.setText("");
+            Toast.makeText(this,"Insira o valor da força magnética", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        EditText testando2 = (EditText) findViewById(R.id.tipoCarga1);
+        if(testando2.getText().toString().toLowerCase().trim().equals("")){
+            myAnswer.setText("");
+            myAnswer2.setText("");
+            Toast.makeText(this,"Insira o tipo de carga (p ou e)", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        EditText testando3 = (EditText) findViewById(R.id.campoMagnetico1);
+        if(testando3.getText().toString().toLowerCase().trim().equals("")){
+            myAnswer.setText("");
+            myAnswer2.setText("");
+            Toast.makeText(this,"Insira o valor do campo magnético", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        EditText testando4 = (EditText) findViewById(R.id.angulo1);
+        if(testando4.getText().toString().toLowerCase().trim().equals("")){
+            myAnswer.setText("");
+            myAnswer2.setText("");
+            Toast.makeText(this,"Insira o valor do ângulo", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        int forcaMagnetica1potencia;
+        EditText forcaMagneticaunidadeText = (EditText) findViewById(R.id.unidade7);
+        String forcaMagneticaunidade = forcaMagneticaunidadeText.getText().toString().toLowerCase().trim();
+        if (forcaMagneticaunidade.equals("")){
+            forcaMagnetica1potencia = 0;
+        }else if(forcaMagneticaunidade.equals("femto")){
+            forcaMagnetica1potencia = -15;
+        }else if(forcaMagneticaunidade.equals("pico")){
+            forcaMagnetica1potencia = -12;
+        }else if(forcaMagneticaunidade.equals("nano")){
+            forcaMagnetica1potencia = -9;
+        }else if(forcaMagneticaunidade.equals("micro")){
+            forcaMagnetica1potencia = -6;
+        }else if(forcaMagneticaunidade.equals("mili")){
+            forcaMagnetica1potencia = -3;
+        }else if(forcaMagneticaunidade.equals("centi")){
+            forcaMagnetica1potencia = -2;
+        }else if(forcaMagneticaunidade.equals("deci")){
+            forcaMagnetica1potencia = -1;
+        }else if(forcaMagneticaunidade.equals("deca")){
+            forcaMagnetica1potencia = 1;
+        }else if(forcaMagneticaunidade.equals("hecto")){
+            forcaMagnetica1potencia = 2;
+        }else if(forcaMagneticaunidade.equals("quilo")){
+            forcaMagnetica1potencia = 3;
+        }else if(forcaMagneticaunidade.equals("mega")){
+            forcaMagnetica1potencia = 6;
+        }else if(forcaMagneticaunidade.equals("giga")){
+            forcaMagnetica1potencia = 9;
+        }else if(forcaMagneticaunidade.equals("tera")){
+            forcaMagnetica1potencia = 12;
+        }else if(forcaMagneticaunidade.equals("peta")){
+            forcaMagnetica1potencia = 15;
+        }else{
+            myAnswer.setText("");
+            myAnswer2.setText("");
+            Toast.makeText(this,"Unidade(s) inválida(s). Tente novamente", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        int carga1potencia = -19;
+        double carga1 = 1.602;
+        int cargaMassaPotencia;
+        double carga1massa;
+        EditText tipoDecargaText = (EditText) findViewById(R.id.tipoCarga1);
+        String tipoDeCarga = tipoDecargaText.getText().toString().toLowerCase().trim();
+        if(tipoDeCarga.equals("p")){
+            cargaMassaPotencia = -27;
+            carga1massa = 1.673;
+        }else if(tipoDeCarga.equals("e")){
+            cargaMassaPotencia = -31;
+            carga1massa = 9.109;
+        }else{
+            myAnswer.setText("");
+            myAnswer2.setText("");
+            Toast.makeText(this,"Tipo de carga inválida. Tente novamente", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        int campoMagnetico1potencia;
+        EditText campoMagneticounidadeText = (EditText) findViewById(R.id.unidade8);
+        String campoMagneticounidade = campoMagneticounidadeText.getText().toString().toLowerCase().trim();
+        if (campoMagneticounidade.equals("")){
+            campoMagnetico1potencia = 0;
+        }else if(campoMagneticounidade.equals("femto")){
+            campoMagnetico1potencia = -15;
+        }else if(campoMagneticounidade.equals("pico")){
+            campoMagnetico1potencia = -12;
+        }else if(campoMagneticounidade.equals("nano")){
+            campoMagnetico1potencia = -9;
+        }else if(campoMagneticounidade.equals("micro")){
+            campoMagnetico1potencia = -6;
+        }else if(campoMagneticounidade.equals("mili")){
+            campoMagnetico1potencia = -3;
+        }else if(campoMagneticounidade.equals("centi")){
+            campoMagnetico1potencia = -2;
+        }else if(campoMagneticounidade.equals("deci")){
+            campoMagnetico1potencia = -1;
+        }else if(campoMagneticounidade.equals("deca")){
+            campoMagnetico1potencia = 1;
+        }else if(campoMagneticounidade.equals("hecto")){
+            campoMagnetico1potencia = 2;
+        }else if(campoMagneticounidade.equals("quilo")){
+            campoMagnetico1potencia = 3;
+        }else if(campoMagneticounidade.equals("mega")){
+            campoMagnetico1potencia = 6;
+        }else if(campoMagneticounidade.equals("giga")){
+            campoMagnetico1potencia = 9;
+        }else if(campoMagneticounidade.equals("tera")){
+            campoMagnetico1potencia = 12;
+        }else if(campoMagneticounidade.equals("peta")){
+            campoMagnetico1potencia = 15;
+        }else{
+            myAnswer.setText("");
+            myAnswer2.setText("");
+            Toast.makeText(this,"Unidade(s) inválida(s). Tente novamente", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        EditText forcaMagneticaText = (EditText) findViewById(R.id.forcaMagnetica1);
+        double forcaMagnetica = Double.parseDouble(forcaMagneticaText.getText().toString());
+        EditText campoMagneticoText = (EditText) findViewById(R.id.campoMagnetico1);
+        double campoMagnetico = Double.parseDouble(campoMagneticoText.getText().toString());
+        EditText anguloText = (EditText) findViewById(R.id.angulo1);
+        double angulo = Double.parseDouble(anguloText.getText().toString());
+
+        double velocidadeValor = forcaMagnetica/(campoMagnetico*carga1*Math.sin(Math.toRadians(angulo)));
+        int velocidadePotencia = forcaMagnetica1potencia+((-1)*(campoMagnetico1potencia+carga1potencia));
+
+        String respostaVelocidade = "[ v = "+String.format("%.2f",velocidadeValor)+"x10^("+velocidadePotencia+") m/s ]";
+
+        double energiaCineticaValor = (carga1massa*(velocidadeValor*velocidadeValor))/2;
+        int energiaCineticaPotencia = cargaMassaPotencia+(velocidadePotencia*2);
+
+        String respostaCinetica = "K = "+String.format("%.2f",energiaCineticaValor)+"x10^("+energiaCineticaPotencia+") J";
+
+        myAnswer.setText(respostaCinetica);
+        myAnswer2.setText(respostaVelocidade);
+
     }
 }
