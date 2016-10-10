@@ -5,9 +5,168 @@
     tools:context="layout.terceiroEstagio">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:text="Campo Magnético"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView3"
+            android:textSize="30sp"
+            android:layout_marginTop="13dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:text="Tipo de carga:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:id="@+id/textTipoCarga1"
+            android:layout_below="@+id/textForcaMagnetica1"
+            android:layout_alignRight="@+id/textForcaMagnetica1"
+            android:layout_alignEnd="@+id/textForcaMagnetica1" />
+
+        <TextView
+            android:text="Ângulo:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="31dp"
+            android:id="@+id/textAngulo1"
+            android:layout_below="@+id/textCampoMagnetico1"
+            android:layout_alignRight="@+id/textCampoMagnetico1"
+            android:layout_alignEnd="@+id/textCampoMagnetico1" />
+
+        <EditText
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/tipoCarga1"
+            android:textSize="14sp"
+            android:layout_width="50dp"
+            android:layout_alignBaseline="@+id/textTipoCarga1"
+            android:layout_alignBottom="@+id/textTipoCarga1"
+            android:layout_toRightOf="@+id/textTipoCarga1"
+            android:layout_toEndOf="@+id/textTipoCarga1" />
+
+        <EditText
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/forcaMagnetica1"
+            android:textSize="14sp"
+            android:layout_alignBaseline="@+id/textForcaMagnetica1"
+            android:layout_alignBottom="@+id/textForcaMagnetica1"
+            android:layout_toRightOf="@+id/textForcaMagnetica1"
+            android:layout_toEndOf="@+id/textForcaMagnetica1" />
+
+        <EditText
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/campoMagnetico1"
+            android:textSize="14sp"
+            android:layout_alignBaseline="@+id/textCampoMagnetico1"
+            android:layout_alignBottom="@+id/textCampoMagnetico1"
+            android:layout_toRightOf="@+id/textCampoMagnetico1"
+            android:layout_toEndOf="@+id/textCampoMagnetico1" />
+
+        <EditText
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/unidade8"
+            android:textSize="14sp"
+            android:layout_alignBaseline="@+id/campoMagnetico1"
+            android:layout_alignBottom="@+id/campoMagnetico1"
+            android:layout_toRightOf="@+id/campoMagnetico1"
+            android:layout_toEndOf="@+id/campoMagnetico1" />
+
+        <EditText
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/unidade7"
+            android:textSize="14sp"
+            android:layout_alignBaseline="@+id/forcaMagnetica1"
+            android:layout_alignBottom="@+id/forcaMagnetica1"
+            android:layout_toRightOf="@+id/forcaMagnetica1"
+            android:layout_toEndOf="@+id/forcaMagnetica1" />
+
+        <TextView
+            android:text="Campo Magnético (T):"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:id="@+id/textCampoMagnetico1"
+            android:layout_below="@+id/tipoCarga1"
+            android:layout_toLeftOf="@+id/tipoCarga1"
+            android:layout_toStartOf="@+id/tipoCarga1" />
+
+        <EditText
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/angulo1"
+            android:textSize="14sp"
+            android:layout_alignBaseline="@+id/textAngulo1"
+            android:layout_alignBottom="@+id/textAngulo1"
+            android:layout_toRightOf="@+id/textAngulo1"
+            android:layout_toEndOf="@+id/textAngulo1" />
+
+        <TextView
+            android:text="Força Magnética (N):"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="38dp"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="23dp"
+            android:id="@+id/textForcaMagnetica1"
+            android:layout_below="@+id/textView3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:text="Calcula energia cinética"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:id="@+id/buttonEnergiaCinetica"
+            android:layout_below="@+id/angulo1"
+            android:layout_centerHorizontal="true"
+            android:onClick="getAnswerEnergiaCinetica" />
+
+        <TextView
+            android:layout_width="400dp"
+            android:layout_marginTop="26dp"
+            android:id="@+id/answerEnergicaCinetica"
+            android:layout_below="@+id/buttonEnergiaCinetica"
+            android:layout_alignLeft="@+id/textView3"
+            android:layout_alignStart="@+id/textView3"
+            android:layout_alignRight="@+id/textView3"
+            android:layout_alignEnd="@+id/textView3"
+            android:textAlignment="center"
+            android:layout_height="50dp"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_height="50dp"
+            android:id="@+id/answerVelocidadeEnergia"
+            android:layout_width="400dp"
+            android:textAlignment="center"
+            android:layout_below="@+id/answerEnergicaCinetica"
+            android:layout_alignRight="@+id/answerEnergicaCinetica"
+            android:layout_alignEnd="@+id/answerEnergicaCinetica"
+            android:layout_alignLeft="@+id/answerEnergicaCinetica"
+            android:layout_alignStart="@+id/answerEnergicaCinetica"
+            android:textSize="24sp" />
+    </RelativeLayout>
 </FrameLayout>

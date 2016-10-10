@@ -65,7 +65,7 @@
         android:text="  "
         android:id="@+id/answerForca"
         android:textAlignment="center"
-        android:textSize="30sp"
+        android:textSize="24sp"
         android:layout_marginTop="18dp"
         android:layout_width="400dp"
         android:layout_below="@+id/buttonForca"
@@ -138,5 +138,14 @@
         android:layout_alignBottom="@+id/distancia1"
         android:layout_toRightOf="@+id/carga2"
         android:layout_toEndOf="@+id/carga2" />
+
+    <TextView
+        android:text="Campo Elétrico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textSize="30sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

@@ -163,11 +163,11 @@ public class MainActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "Coulomb";
+                    return "Assunto 1";
                 case 1:
-                    return "Corrente";
+                    return "Assunto 2";
                 case 2:
-                    return "Magnético";
+                    return "Assunto 3";
             }
             return null;
         }
@@ -602,5 +602,10 @@ public class MainActivity extends AppCompatActivity {
 
         TextView answer = (TextView) findViewById(R.id.answerResistencia);
         answer.setText(resposta);
+    }
+
+    public void getAnswerEnergiaCinetica(View v){
+        //testing
+        Toast.makeText(this,"Correct!", Toast.LENGTH_SHORT).show();
     }
 }

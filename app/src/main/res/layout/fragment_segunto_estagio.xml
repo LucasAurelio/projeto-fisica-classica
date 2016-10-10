@@ -44,28 +44,6 @@
             android:layout_alignRight="@+id/buttonDiametro"
             android:layout_alignEnd="@+id/buttonDiametro" />
 
-        <EditText
-            android:layout_width="80dp"
-            android:layout_height="wrap_content"
-            android:inputType="numberDecimal"
-            android:ems="10"
-            android:layout_marginTop="38dp"
-            android:id="@+id/corrente1"
-            android:textSize="14sp"
-            android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/unidade4"
-            android:layout_toStartOf="@+id/unidade4" />
-
-        <TextView
-            android:text="Corrente (A):"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textCorrente1"
-            android:layout_alignBaseline="@+id/corrente1"
-            android:layout_alignBottom="@+id/corrente1"
-            android:layout_toLeftOf="@+id/corrente1"
-            android:layout_toStartOf="@+id/corrente1" />
-
         <TextView
             android:text="  "
             android:id="@+id/answerDiametro"
@@ -196,10 +174,43 @@
             android:text="Densidade:"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="26dp"
+            android:layout_marginTop="23dp"
             android:id="@+id/textDensidade1"
             android:layout_below="@+id/corrente1"
             android:layout_alignLeft="@+id/buttonResistencia"
             android:layout_alignStart="@+id/buttonResistencia" />
+
+        <TextView
+            android:text="Corrente e Resistência"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:textSize="30sp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp" />
+
+        <EditText
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/corrente1"
+            android:textSize="14sp"
+            android:layout_marginTop="11dp"
+            android:layout_below="@+id/textView2"
+            android:layout_toLeftOf="@+id/unidade4"
+            android:layout_toStartOf="@+id/unidade4" />
+
+        <TextView
+            android:text="Corrente (A):"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textCorrente1"
+            android:layout_alignBaseline="@+id/corrente1"
+            android:layout_alignBottom="@+id/corrente1"
+            android:layout_toLeftOf="@+id/corrente1"
+            android:layout_toStartOf="@+id/corrente1"
+            android:textSize="14sp" />
     </RelativeLayout>
 </FrameLayout>
